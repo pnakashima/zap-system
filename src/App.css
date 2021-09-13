@@ -37,6 +37,9 @@
   }
 }
 
+
+
+
 .header-container {
   display: flex;
   width: 80%;
@@ -82,14 +85,177 @@ button {
   color: #FFF;
   font-weight: bold;
   margin: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.message-container {
+
+
+input[type=text], select, textarea {
+  width: 90%;
+}
+
+
+
+.message-list-top-container {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-list-filter-container {
+  display: table;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.message-filter-item {
+  display: table-cell
+}
+
+/* .message-list-filter-container {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: space-between;
+} */
+
+
+#message-list-table {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#message-list-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0b1a72;
+  color: white;
+}
+
+#message-list-table td, #message-list-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#message-list-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#message-list-table tr:hover {background-color: #ddd;}
+
+
+.message-top-container {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-body-container {
+  width: 60%;
+  margin: auto;
+}
+
+.dashboard {
   display: flex;
   width: 80%;
-  margin: 0 auto;
-  /* padding: 0px 30px; */
-  /* justify-content: space-around; */
-  align-items: center;
+  margin: auto;
   flex-direction: column;
+  align-items: center;
 }
+
+
+
+/* .modal{
+  background-color: white;
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  left: 200px;
+  top: 40px;
+  color: black;
+}
+
+.show{
+  display: block !important;
+} */
+
+
+#portal .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+.container .modal {
+  z-index: 1;
+  width: 40vw;
+  height: 40vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: relative;
+  animation: animate 0.3s;
+}
+.modal button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 8px 11px;
+  background: #0b1a72;
+  color: white;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+@keyframes animate {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

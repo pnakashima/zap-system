@@ -1,5 +1,8 @@
 
+
 const Header = () => {
+
+    
 
     return (
         <div className="header-container">
@@ -7,7 +10,6 @@ const Header = () => {
             <span>
                 <a href="/">Dashboard</a>
                 <a href="/list">Lista</a>
-                <a href="/message">Mensagem</a>
             </span>
         </div>)
 
