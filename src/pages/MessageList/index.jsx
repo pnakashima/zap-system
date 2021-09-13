@@ -33,9 +33,10 @@ const MessageList = () => {
         getInfo()
     }, [])
 
+
     const openModal = (message) => {
-        console.log("show")
-        //setDisplayMessage(message)
+        console.log("modal", message)
+        setDisplayMessage(message)
         setShowModal(true)
     }
 
@@ -60,31 +61,6 @@ const MessageList = () => {
         setMessages(response.data)
     }
 
-
-
-    // const mapSelect = (arr) => {
-    //     return (
-    //     arr.map((el, key) => <option value=`${key}`>`${el}`</option>)
-    // }
-
-
-
-    // const toggleDropdown = () => {
-    //     console.log("show");
-    //     //se clicar no botão, modal aparece
-    //     setDropdown("show");
-    //     document.body.addEventListener("click", closeDropdown);
-    //   }
-
-    //   const closeDropdown = event => {
-    //     event.stopPropagation(); //impede de executar listeners dos filhos
-    //     const contain = modalRef.current.contains(event.target);
-    //     if (!contain) { //se clicar fora do modal, ele DESaparece
-    //       console.log("hidden");
-    //       setDropdown("");
-    //       document.body.removeEventListener("click", closeDropdown);
-    //     }
-    //   };
 
     return (
         <>
@@ -131,64 +107,12 @@ const MessageList = () => {
                                 <td>{el.trigger}</td>
                                 <td>{el.channel}</td>
                                 <td>{el.timer}</td>
-                                <td><button onClick={openModal} >Ver mensagem</button></td>
+                                <td><button onClick={() => openModal(el.message)} >Ver mensagem</button></td>
                             </tr>
                         )}
                     </tbody>
                 </table>
             </div>
-
-            {/* <div class="test-container">
-                <div class="top-container">
-                    <h1 className="body-title">Mensagens</h1>
-                    <span>
-                        <button>Pesquisar</button>
-                        <button onClick={() => history.push("/message")}>Nova Mensagem</button>
-                    </span>
-                </div>
-                <div class="trigger">
-                    <label htmlFor="trigger">Gatilho:</label><br />
-                    <input type="text" id="trigger" name="trigger" />
-                </div>
-                <div class="channel">
-                    <label htmlFor="channel">Canal:</label><br />
-                    <input type="text" id="channel" name="channel" />
-                </div>
-                <div class="timer">
-                    <label htmlFor="timer">Timer:</label><br />
-                    <input type="text" id="timer" name="timer" />
-                </div>
-                <div class="lower-container">
-                    <table border="1" id="message-list-table">
-                        <tbody>
-                            <tr>
-                                <th>Gatilho</th>
-                                <th>Canal</th>
-                                <th>Tempo</th>
-                                <th>Ações</th>
-                            </tr>
-                            <tr>
-                                <td>abertura_conta</td>
-                                <td>sms</td>
-                                <td>15:00</td>
-                                <td><button onClick={openModal}>Ver mensagem</button></td>
-                            </tr>
-                            <tr>
-                                <td>fez_pix</td>
-                                <td>sms</td>
-                                <td>5:00</td>
-                                <td><button onClick={openModal}>Ver mensagem</button></td>
-                            </tr>
-                            <tr>
-                                <td>abertura_conta</td>
-                                <td>whatsapp</td>
-                                <td>73:00</td>
-                                <td><button onClick={openModal}>Ver mensagem</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div> */}
 
             <div id="portal"></div>
 

@@ -216,6 +216,10 @@ input[type=text], select, textarea {
   position: relative;
   animation: animate 0.3s;
 }
+.modal-message {
+  padding: 20px;
+}
+
 .modal button {
   position: absolute;
   top: 7px;

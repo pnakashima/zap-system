@@ -31,7 +31,8 @@ const Modal = ({ setShowModal, message }) => {
     return ReactDom.createPortal(
         <div className="container" ref={modalRef} onClick={closeModal}>
             <div className="modal">
-                {message}
+                <strong>Mensagem: </strong>
+                <span className="modal-message">{message}</span>
                 <button onClick={() => setShowModal(false)}>X</button>
             </div>
         </div>,
