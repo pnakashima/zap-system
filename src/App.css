@@ -98,7 +98,6 @@ input[type=text], select, textarea {
 }
 
 
-
 .message-list-top-container {
   display: flex;
   width: 60%;
@@ -108,7 +107,7 @@ input[type=text], select, textarea {
   align-items: center;
 }
 
-.message-list-filter-container {
+.message-filter-container {
   display: table;
   width: 60%;
   margin: 0 auto;
@@ -245,6 +244,27 @@ input[type=text], select, textarea {
 
 
 
+/* .test-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "top-container top-container top-container"
+    "trigger channel timer"
+    "lower-container lower-container lower-container";
+}
+
+.top-container { grid-area: top-container; }
+
+.lower-container { grid-area: lower-container; }
+
+.trigger { grid-area: trigger; }
+
+.channel { grid-area: channel; }
+
+.timer { grid-area: timer; } */
 
 
 

@@ -14,17 +14,11 @@
 
 
 //Modal.js
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import ReactDom from "react-dom";
 
 
-const Modal = ({ setShowModal }) => {
-
-    const [trigger, setTrigger] = useState()
-    const [channel, setChannel] = useState()
-    const [timer, setTimer] = useState()
-    const [message, setMessage] = useState()
-
+const Modal = ({ setShowModal, message }) => {
 
     // close the modal when clicking outside the modal.
     const modalRef = useRef();
@@ -37,9 +31,7 @@ const Modal = ({ setShowModal }) => {
     return ReactDom.createPortal(
         <div className="container" ref={modalRef} onClick={closeModal}>
             <div className="modal">
-                Mensagem:
-
-
+                {message}
                 <button onClick={() => setShowModal(false)}>X</button>
             </div>
         </div>,
