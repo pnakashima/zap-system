@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-import Modal from "../Modal";
 import api from "../../services/api";
-
+import Swal from 'sweetalert2'
 
 const MessageList = () => {
 
-    const [showModal, setShowModal] = useState(false);
     const [triggers, setTriggers] = useState([])
     const [channels, setChannels] = useState([])
     const [messages, setMessages] = useState([])
-    const [displayMessage, setDisplayMessage] = useState("")
-    const [triggerValue, setTriggerValue] = useState("")
-    const [channelValue, setChannelValue] = useState("")
+    const [triggerValue, setTriggerValue] = useState('""')
+    const [channelValue, setChannelValue] = useState('""')
+    const [timerValue, setTimerValue] = useState('""')
 
     const history = useHistory()
 
@@ -35,27 +33,17 @@ const MessageList = () => {
 
 
     const openModal = (message) => {
-        console.log("modal", message)
-        setDisplayMessage(message)
-        setShowModal(true)
+        Swal.fire({
+            title: 'Mensagem',
+            text: message,
+            confirmButtonText: 'Ok'
+        })
     }
 
-    const search = async () => {
-        console.log("search", triggerValue, channelValue)
+    const search = async () => {  // NAO TA FUNCIONANDO
         let query = ""
-        if (triggerValue) {
-            if (channelValue) {
-                query = `/messages?trigger=${triggerValue}&channel=${channelValue}`
-            } else {
-                query = `/messages?trigger=${triggerValue}`
-            }
-        } else if (channelValue) {
-            query = `/messages?channel=${channelValue}`
-        } else {
-            const messages = await api.get('/messages')
-            setMessages(messages.data)
-            return
-        }
+        query = `/messages?trigger=${triggerValue}&channel=${channelValue}&timer=${timerValue}`
+        console.log(query)
         const response = await api.get(query)
         console.log("search results", response.data)
         setMessages(response.data)
@@ -76,20 +64,20 @@ const MessageList = () => {
                 <div className="message-filter-item">
                     <label htmlFor="trigger">Gatilho:</label><br />
                     <select id="trigger" name="trigger" onChange={(e) => setTriggerValue(e.target.value)} value={triggerValue}>
-                        <option value="" ></option>
+                        <option value='""' ></option>
                         {triggers.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
                     </select>
                 </div>
                 <div className="message-filter-item">
                     <label htmlFor="channel">Canal:</label><br />
                     <select id="channel" name="channel" onChange={(e) => setChannelValue(e.target.value)} value={channelValue}>
-                        <option value=""></option>
+                        <option value='""'></option>
                         {channels.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
                     </select>
                 </div>
                 <div className="message-filter-item">
                     <label htmlFor="timer">Timer:</label><br />
-                    <input type="text" id="timer" name="timer" />
+                    <input type="text" id="timer" name="timer" onChange={(e)=>setTimerValue(e.target.value)} />
                 </div>
             </div>
 
@@ -113,15 +101,6 @@ const MessageList = () => {
                     </tbody>
                 </table>
             </div>
-
-            <div id="portal"></div>
-
-            {showModal ? <Modal setShowModal={setShowModal} message={displayMessage} /> : null}
-
-
-
-
-
         </>
     );
 }

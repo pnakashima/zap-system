@@ -62,6 +62,13 @@
       "trigger": "fez_pix",
       "timer": "111",
       "message": "aaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "117f8e8",
+      "channel": "whatsapp",
+      "trigger": "abertura_conta",
+      "timer": "333",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eros nibh, dapibus vitae odio et, venenatis pellentesque metus. Donec id porta urna. Mauris ut arcu blandit, tincidunt lectus id, varius erat. Cras ut vestibulum velit. Proin sapien turpis, consequat at porta sed, suscipit a dolor. Sed consectetur, felis ac consectetur luctus, dolor neque imperdiet libero, vel pulvinar nulla ipsum sed quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque aliquet rutrum augue sed egestas. Nam commodo euismod purus, eget efficitur mi scelerisque in. Phasellus euismod a ex eu lobortis. Donec faucibus metus et purus facilisis, nec posuere lacus pretium. Curabitur eu libero eget lacus faucibus imperdiet. Vivamus sed justo ultrices, interdum eros sed, mattis risus. Donec cursus ligula a urna sollicitudin, id aliquet tortor pulvinar. Quisque quis turpis interdum, gravida ante in, pharetra diam."
     }
   ],
   "channels": [
