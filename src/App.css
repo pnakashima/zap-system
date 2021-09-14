@@ -51,10 +51,11 @@
 }
 
 
-a {
+span {
   padding: 0px 20px;
   text-decoration: none;
   color: #FFF;
+  cursor: pointer;
 }
 
 
@@ -89,6 +90,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
 }
 
 

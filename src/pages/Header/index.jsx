@@ -10,10 +10,10 @@ const Header = () => {
                 <h1 className="title">ZAP SYSTEM</h1>
             </div>
             <div>
-                {/* <span onClick={() => history.push("/")}>Dashboard</span> */}
-                {/* <span onClick={() => history.push("/list")}>Mensagens</span> */}
-                <a href="/">Dashboard</a>
-                <a href="/list">Mensagens</a>
+                <span onClick={() => history.push("/")}>Dashboard</span>
+                <span onClick={() => history.push("/list")}>Mensagens</span>
+                {/* <a href="/">Dashboard</a>
+                <a href="/list">Mensagens</a> */}
             </div>
         </div>)
 
