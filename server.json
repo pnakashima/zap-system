@@ -69,6 +69,69 @@
       "trigger": "abertura_conta",
       "timer": "333",
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eros nibh, dapibus vitae odio et, venenatis pellentesque metus. Donec id porta urna. Mauris ut arcu blandit, tincidunt lectus id, varius erat. Cras ut vestibulum velit. Proin sapien turpis, consequat at porta sed, suscipit a dolor. Sed consectetur, felis ac consectetur luctus, dolor neque imperdiet libero, vel pulvinar nulla ipsum sed quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque aliquet rutrum augue sed egestas. Nam commodo euismod purus, eget efficitur mi scelerisque in. Phasellus euismod a ex eu lobortis. Donec faucibus metus et purus facilisis, nec posuere lacus pretium. Curabitur eu libero eget lacus faucibus imperdiet. Vivamus sed justo ultrices, interdum eros sed, mattis risus. Donec cursus ligula a urna sollicitudin, id aliquet tortor pulvinar. Quisque quis turpis interdum, gravida ante in, pharetra diam."
+    },
+    {
+      "id": "10b9c47",
+      "channel": "email",
+      "trigger": "",
+      "timer": "",
+      "message": "a"
+    },
+    {
+      "id": "1f19df8",
+      "channel": "email",
+      "trigger": "",
+      "timer": "",
+      "message": ""
+    },
+    {
+      "id": "189f14b",
+      "channel": "",
+      "trigger": "abertura_conta",
+      "timer": "",
+      "message": ""
+    },
+    {
+      "id": "11763a0",
+      "channel": "",
+      "trigger": "abertura_conta",
+      "timer": "",
+      "message": ""
+    },
+    {
+      "id": "123ff98",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "16",
+      "message": "aaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "10e8b96",
+      "channel": "whatsapp",
+      "trigger": "abertura_conta",
+      "timer": "30",
+      "message": "gggggggggg"
+    },
+    {
+      "id": "17e8c05",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "15",
+      "message": "fffffffffffffffff"
+    },
+    {
+      "id": "12a7ae9",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "15",
+      "message": "kkkkkkkkkkkkkkkk"
+    },
+    {
+      "id": "166460c",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "15",
+      "message": "kkkkkkkkkkkkkkkk"
     }
   ],
   "channels": [
