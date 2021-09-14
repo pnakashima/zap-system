@@ -132,6 +132,13 @@
       "trigger": "abertura_conta",
       "timer": "15",
       "message": "kkkkkkkkkkkkkkkk"
+    },
+    {
+      "id": "10085e5",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "16",
+      "message": "as"
     }
   ],
   "channels": [

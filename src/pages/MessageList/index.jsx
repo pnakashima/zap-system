@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import api from "../../services/api";
 import Swal from 'sweetalert2'
+import MessageFields from "../../components/MessageFields";
 
 const MessageList = () => {
 
@@ -36,11 +37,12 @@ const MessageList = () => {
         Swal.fire({
             title: 'Mensagem',
             text: message,
-            confirmButtonText: 'Ok'
+            confirmButtonText: 'Ok',
+            confirmButtonColor: "#0b1a72"
         })
     }
 
-    const search = async () => {  // NAO TA FUNCIONANDO
+    const search = async () => {  
         let triggerQuery, channelQuery, timerQuery = ""
 
         if (triggerValue) triggerQuery = `trigger=${triggerValue}`
@@ -64,6 +66,8 @@ const MessageList = () => {
                     <button onClick={() => history.push("/message")}>Nova Mensagem</button>
                 </span>
             </div>
+
+            {/* <MessageFields isMessagePage={false} /> */}
 
             <div className="message-filter-container">
                 <div className="message-filter-item">
