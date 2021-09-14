@@ -8,9 +8,9 @@ const MessageList = () => {
     const [triggers, setTriggers] = useState([])
     const [channels, setChannels] = useState([])
     const [messages, setMessages] = useState([])
-    const [triggerValue, setTriggerValue] = useState('""')
-    const [channelValue, setChannelValue] = useState('""')
-    const [timerValue, setTimerValue] = useState('""')
+    const [triggerValue, setTriggerValue] = useState("")
+    const [channelValue, setChannelValue] = useState("")
+    const [timerValue, setTimerValue] = useState("")
 
     const history = useHistory()
 
@@ -41,8 +41,13 @@ const MessageList = () => {
     }
 
     const search = async () => {  // NAO TA FUNCIONANDO
-        let query = ""
-        query = `/messages?trigger=${triggerValue}&channel=${channelValue}&timer=${timerValue}`
+        let triggerQuery, channelQuery, timerQuery = ""
+
+        if (triggerValue) triggerQuery = `trigger=${triggerValue}`
+        if (channelValue) channelQuery = `channel=${channelValue}`
+        if (timerValue) timerQuery = `timer=${timerValue}`
+
+        let query = `/messages?${triggerQuery}&${channelQuery}&${timerQuery}`
         console.log(query)
         const response = await api.get(query)
         console.log("search results", response.data)
@@ -64,20 +69,20 @@ const MessageList = () => {
                 <div className="message-filter-item">
                     <label htmlFor="trigger">Gatilho:</label><br />
                     <select id="trigger" name="trigger" onChange={(e) => setTriggerValue(e.target.value)} value={triggerValue}>
-                        <option value='""' ></option>
+                        <option value="" ></option>
                         {triggers.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
                     </select>
                 </div>
                 <div className="message-filter-item">
                     <label htmlFor="channel">Canal:</label><br />
                     <select id="channel" name="channel" onChange={(e) => setChannelValue(e.target.value)} value={channelValue}>
-                        <option value='""'></option>
+                        <option value=""></option>
                         {channels.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
                     </select>
                 </div>
                 <div className="message-filter-item">
                     <label htmlFor="timer">Timer:</label><br />
-                    <input type="text" id="timer" name="timer" onChange={(e)=>setTimerValue(e.target.value)} />
+                    <input type="text" id="timer" name="timer" onChange={(e) => setTimerValue(e.target.value)} />
                 </div>
             </div>
 
