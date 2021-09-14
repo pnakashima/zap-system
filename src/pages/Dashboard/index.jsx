@@ -1,14 +1,16 @@
+import HorizontalBarChart from "../../components/HorizontalBarChart"
+import LineChart from "../../components/LineChart"
 
 
 const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <div>
-                gráfico1
+            <div className="graph-area">
+                <HorizontalBarChart />
             </div>
-            <div>
-                gráfico2
+            <div className="graph-area">
+                <LineChart />
             </div>
         </div>
 

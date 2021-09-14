@@ -173,9 +173,12 @@ input[type=text], select, textarea {
   margin: auto;
   flex-direction: column;
   align-items: center;
+  background-color: aquamarine;
 }
 
-
+.graph-area {
+  height: 50vh;
+}
 
 /* .modal{
   background-color: white;
