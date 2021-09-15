@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useHistory } from 'react-router'
 import api from '../../services/api'
 import * as yup from 'yup'
@@ -10,33 +10,14 @@ import { useDispatch } from 'react-redux'
 
 const Message = () => {
 
-    const [triggers, setTriggers] = useState([])
-    const [channels, setChannels] = useState([])
     const [timer, setTimer] = useState("")
     const [message, setMessage] = useState("")
     const [triggerValue, setTriggerValue] = useState("")
     const [channelValue, setChannelValue] = useState("")
-    // const [errorMessages, setErrorMessages] = useState({})
 
     const history = useHistory()
 
     const dispatch = useDispatch()
-
-    const getInfo = async () => {
-        try {
-            const triggers = await api.get('/triggers')
-            setTriggers(triggers.data)
-            const channels = await api.get('/channels')
-            setChannels(channels.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        getInfo()
-    }, [])
-
 
     const schema = yup.object().shape({
         trigger: yup.string().required('Campo "Gatilho" obrigatório. '),
@@ -59,7 +40,7 @@ const Message = () => {
             console.log("isValid", isValid)
             postMessage(body)
             openSuccessModal()
-            dispatch(addMessage(body))
+            // dispatch(addMessage(body))
         } catch (error) {
             console.log(error)
             const errorMessage = error.inner.reduce((errorMessage, err) => errorMessage + (err.message + "<br>"), "")
@@ -67,7 +48,6 @@ const Message = () => {
         }
 
     }
-
 
     const openErrorModal = (title, message, icon) => {
         Swal.fire({
@@ -99,55 +79,26 @@ const Message = () => {
         })
     }
 
-
     const postMessage = async (body) => await api.post('/messages', body)
-
-
 
     return (
         <>
-
-            <div className="message-top-container">
-                <h1 className="body-title">Mensagens</h1>
-                <span>
-                    <button onClick={() => history.push('/list')}>Voltar</button>
-                    <button onClick={handleSubmit}>Cadastrar</button>
-                </span>
-            </div>
-
-            {/* <MessageFields isMessagePage={true} /> */}
-
-            <div className="message-filter-container">
-                <div className="message-filter-item">
-                    <label htmlFor="trigger">Gatilho:</label><br />
-                    <select id="trigger" name="trigger" onChange={(e) => setTriggerValue(e.target.value)} value={triggerValue}>
-                        <option value="" ></option>
-                        {triggers.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
-                    </select>
-                </div>
-                <div className="message-filter-item">
-                    <label htmlFor="channel">Canal:</label><br />
-                    <select id="channel" name="channel" onChange={(e) => setChannelValue(e.target.value)} value={channelValue}>
-                        <option value=""></option>
-                        {channels.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
-                    </select>
-                </div>
-                <div className="message-filter-item">
-                    <label htmlFor="timer">Timer:</label><br />
-                    <input type="text" id="timer" name="timer" onChange={(e) => setTimer(e.target.value)} />
-                </div>
-            </div>
-
-            <div className="message-body-container">
-                <label htmlFor="message">Mensagem:</label><br />
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="10"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                />
-            </div>
+            <MessageFields
+                isMessagePage={true}
+                title={"Nova Mensagem"}
+                funcButton1={() => history.push('/list')}
+                labelButton1={"Voltar"}
+                funcButton2={handleSubmit}
+                labelButton2={"Cadastrar"}
+                triggerValue={triggerValue}
+                channelValue={channelValue}
+                timer={timer}
+                message={message}
+                handleTrigger={setTriggerValue}
+                handleChannel={setChannelValue}
+                handleTimer={setTimer}
+                handleMessage={setMessage}
+            />
         </>
     );
 }

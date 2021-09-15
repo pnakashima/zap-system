@@ -68,14 +68,14 @@ input[type=text], select, textarea {
 }
 
 
-.message-list-top-container {
+/* .message-list-top-container {
   display: flex;
   width: 60%;
   margin: 0 auto;
   padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .message-filter-container {
   display: table;
@@ -87,12 +87,7 @@ input[type=text], select, textarea {
   display: table-cell
 }
 
-/* .message-list-filter-container {
-  display: flex;
-  width: 60%;
-  margin: 0 auto;
-  justify-content: space-between;
-} */
+
 
 
 #message-list-table {
@@ -151,84 +146,9 @@ input[type=text], select, textarea {
 }
 
 
-/* #portal .container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
-}
-.container .modal {
-  z-index: 1;
-  width: 40vw;
-  height: 40vh;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  position: relative;
-  animation: animate 0.3s;
-}
-.modal-message {
-  padding: 20px;
-}
-
-.modal button {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  padding: 8px 11px;
-  background: #0b1a72;
-  color: white;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-@keyframes animate {
-  from {
-    transform: scale(0.5);
-  }
-  to {
-    transform: scale(1);
-  }
-} */
 
 
 
-
-
-
-
-/* .test-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "top-container top-container top-container"
-    "trigger channel timer"
-    "lower-container lower-container lower-container";
-}
-
-.top-container { grid-area: top-container; }
-
-.lower-container { grid-area: lower-container; }
-
-.trigger { grid-area: trigger; }
-
-.channel { grid-area: channel; }
-
-.timer { grid-area: timer; } */
 
 
 

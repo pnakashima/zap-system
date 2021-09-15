@@ -342,6 +342,48 @@
       "trigger": "deletou_chave_pix",
       "timer": "369",
       "message": "jj"
+    },
+    {
+      "id": "11e3c92",
+      "channel": "sms",
+      "trigger": "criou_chave_pix",
+      "timer": "147",
+      "message": "ss"
+    },
+    {
+      "id": "1479c26",
+      "channel": "email",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "258",
+      "message": "sss"
+    },
+    {
+      "id": "1d99973",
+      "channel": "whatsapp",
+      "trigger": "criou_chave_pix",
+      "timer": "55",
+      "message": "j"
+    },
+    {
+      "id": "131024a",
+      "channel": "sms",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "369",
+      "message": "ffff"
+    },
+    {
+      "id": "1e5f2ba",
+      "channel": "sms",
+      "trigger": "falou_com_atendimento",
+      "timer": "258",
+      "message": "llll"
+    },
+    {
+      "id": "19bfe9d",
+      "channel": "email",
+      "trigger": "falou_com_atendimento",
+      "timer": "147",
+      "message": "ddd"
     }
   ],
   "channels": [

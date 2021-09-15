@@ -6,8 +6,6 @@ import MessageFields from "../../components/MessageFields";
 
 const MessageList = () => {
 
-    const [triggers, setTriggers] = useState([])
-    const [channels, setChannels] = useState([])
     const [messages, setMessages] = useState([])
     const [triggerValue, setTriggerValue] = useState("")
     const [channelValue, setChannelValue] = useState("")
@@ -19,10 +17,6 @@ const MessageList = () => {
 
     const getInfo = async () => {
         try {
-            const triggers = await api.get('/triggers')
-            setTriggers(triggers.data)
-            const channels = await api.get('/channels')
-            setChannels(channels.data)
             const messages = await api.get('/messages')
             setMessages(messages.data)
         } catch (error) {
@@ -35,7 +29,7 @@ const MessageList = () => {
     }, [])
 
 
-    const openModal = (message) => {
+    const showMessage = (message) => {
         Swal.fire({
             title: 'Mensagem',
             text: message,
@@ -46,45 +40,27 @@ const MessageList = () => {
 
     const search = async () => {
         let query = `/messages?trigger_like=${triggerValue}&channel_like=${channelValue}&timer_like=${timerValue}`
-        console.log(query)
         const response = await api.get(query)
-        console.log("search results", response.data)
         setMessages(response.data)
     }
 
 
     return (
         <>
-            <div className="message-list-top-container" ref={refPageTop}>
-                <h1 className="body-title">Mensagens</h1>
-                <span>
-                    <button onClick={search}>Pesquisar</button>
-                    <button onClick={() => history.push("/message")}>Nova Mensagem</button>
-                </span>
-            </div>
-
-            {/* <MessageFields isMessagePage={false} /> */}
-
-            <div className="message-filter-container">
-                <div className="message-filter-item">
-                    <label htmlFor="trigger">Gatilho:</label><br />
-                    <select id="trigger" name="trigger" onChange={(e) => setTriggerValue(e.target.value)} value={triggerValue}>
-                        <option value="" ></option>
-                        {triggers.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
-                    </select>
-                </div>
-                <div className="message-filter-item">
-                    <label htmlFor="channel">Canal:</label><br />
-                    <select id="channel" name="channel" onChange={(e) => setChannelValue(e.target.value)} value={channelValue}>
-                        <option value=""></option>
-                        {channels.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
-                    </select>
-                </div>
-                <div className="message-filter-item">
-                    <label htmlFor="timer">Timer:</label><br />
-                    <input type="text" id="timer" name="timer" onChange={(e) => setTimerValue(e.target.value)} />
-                </div>
-            </div>
+            <MessageFields
+                isMessagePage={false}
+                title={"Mensagens"}
+                labelButton1={"Pesquisar"}
+                funcButton1={search}
+                labelButton2={"Nova Mensagem"}
+                funcButton2={() => history.push("/message")}
+                triggerValue={triggerValue}
+                channelValue={channelValue}
+                timerValue={timerValue}
+                handleTrigger={setTriggerValue}
+                handleChannel={setChannelValue}
+                handleTimer={setTimerValue}
+            />
 
             <div>
                 <table border="1" id="message-list-table">
@@ -102,12 +78,12 @@ const MessageList = () => {
                                 <td>{el.trigger}</td>
                                 <td>{el.channel}</td>
                                 <td>{el.timer}</td>
-                                <td><button onClick={() => openModal(el.message)} >Ver mensagem</button></td>
+                                <td><button onClick={() => showMessage(el.message)} >Ver mensagem</button></td>
                             </tr>
                         )}
                     </tbody>
                 </table>
-            </div>
+            </div> 
 
             <button
                 style={{ display: "flex", margin: "10px auto" }}
