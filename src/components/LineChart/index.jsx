@@ -16,22 +16,17 @@ const data = {
 
 const options = {
   scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-        },
-      },
-    ],
+    yAxes: [{ ticks: { beginAtZero: true, }, },],
   },
+  maintainAspectRatio: false,
 };
 
 const LineChart = () => (
   <>
-    <div className='header'>
+    {/* <div className='header'>
       <h1 className='title'>Line Chart</h1>
-    </div>
-    <Line data={data} options={options} width={800} height={250} />
+    </div> */}
+    <Line data={data} options={options} height={400} />
   </>
 );
 

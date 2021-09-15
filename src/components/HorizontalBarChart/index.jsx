@@ -2,18 +2,16 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
 const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Red', 'Blue', 'Yellow', 'Green'],
     datasets: [
         {
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5],
             backgroundColor: [
                 'red',
                 'blue',
                 'yellow',
                 'green',
-                'purple',
-                'orange',
             ]
         },
     ],
@@ -23,10 +21,9 @@ const options = {
     indexAxis: 'y',
     responsive: true,
     plugins: {
-        legend: {
-            position: 'top',
-        },
+        legend: { position: 'top', },
     },
+    options: { maintainAspectRatio: false }
 };
 
 const HorizontalBarChart = () => (
@@ -34,7 +31,7 @@ const HorizontalBarChart = () => (
         {/* <div className='header'>
             <h1 className='title'>Horizontal Bar Chart</h1>
         </div> */}
-        <Bar data={data} options={options} />
+        <Bar data={data} options={options} height={100} />
     </>
 );
 
