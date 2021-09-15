@@ -160,6 +160,118 @@
       "trigger": "abertura_conta",
       "timer": "15",
       "message": "a"
+    },
+    {
+      "id": "1a273c5",
+      "channel": "email",
+      "trigger": "deletou_chave_pix",
+      "timer": "21",
+      "message": "aaa"
+    },
+    {
+      "id": "1d933db",
+      "channel": "email",
+      "trigger": "deletou_chave_pix",
+      "timer": "21",
+      "message": "aaa"
+    },
+    {
+      "id": "1184b86",
+      "channel": "whatsapp",
+      "trigger": "consultou_saldo",
+      "timer": "32",
+      "message": "sss"
+    },
+    {
+      "id": "18bd037",
+      "channel": "whatsapp",
+      "trigger": "consultou_saldo",
+      "timer": "32",
+      "message": "sss"
+    },
+    {
+      "id": "146d4a1",
+      "channel": "whatsapp",
+      "trigger": "consultou_saldo",
+      "timer": "32",
+      "message": "sss"
+    },
+    {
+      "id": "12dc711",
+      "channel": "whatsapp",
+      "trigger": "consultou_saldo",
+      "timer": "32",
+      "message": "sss"
+    },
+    {
+      "id": "18662e5",
+      "channel": "whatsapp",
+      "trigger": "consultou_saldo",
+      "timer": "32",
+      "message": "sss"
+    },
+    {
+      "id": "144e396",
+      "channel": "sms",
+      "trigger": "criou_chave_pix",
+      "timer": "78",
+      "message": "hhhhhhh"
+    },
+    {
+      "id": "1d18513",
+      "channel": "whatsapp",
+      "trigger": "falou_com_atendimento",
+      "timer": "94",
+      "message": "kkkk"
+    },
+    {
+      "id": "11fac11",
+      "channel": "email",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "69",
+      "message": "hhhhhhh"
+    },
+    {
+      "id": "13d6982",
+      "channel": "sms",
+      "trigger": "recarregou_celular",
+      "timer": "57",
+      "message": "uuuuuuuuuu"
+    },
+    {
+      "id": "135b236",
+      "channel": "sms",
+      "trigger": "recarregou_celular",
+      "timer": "57",
+      "message": "uuuuuuuuuu"
+    },
+    {
+      "id": "157bd61",
+      "channel": "email",
+      "trigger": "deletou_chave_pix",
+      "timer": "93",
+      "message": "kkkkkkk"
+    },
+    {
+      "id": "1f16689",
+      "channel": "sms",
+      "trigger": "consultou_saldo",
+      "timer": "687",
+      "message": "khshsrtsh"
+    },
+    {
+      "id": "17e1aa1",
+      "channel": "whatsapp",
+      "trigger": "alterou_dados_pessois",
+      "timer": "654",
+      "message": "kkkkkkkk"
+    },
+    {
+      "id": "1ff71a0",
+      "channel": "sms",
+      "trigger": "fez_pix",
+      "timer": "3636",
+      "message": "pjpijp"
     }
   ],
   "channels": [

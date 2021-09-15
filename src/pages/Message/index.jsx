@@ -38,7 +38,7 @@ const Message = () => {
     const schema = yup.object().shape({
         trigger: yup.string().required('Campo "Gatilho" obrigatório. '),
         channel: yup.string().required('Campo "Canal" obrigatório. '),
-        timer: yup.number('Campo "Timer" inválido. ').required('Campo "Timer" obrigatório. ').positive('Campo "Timer" inválido. ').integer('Campo "Timer" inválido. '),
+        timer: yup.number().required('Campo "Timer" obrigatório. ').typeError('Campo "Timer" inválido. ').positive('Campo "Timer" inválido. ').integer('Campo "Timer" inválido. '),
         message: yup.string().required('Campo "Mensagem" obrigatório. '),
     })
 
@@ -55,24 +55,46 @@ const Message = () => {
             const isValid = await schema.validate(body, { abortEarly: false })
             console.log("isValid", isValid)
             postMessage(body)
-            openModal("Mensagem cadastrada")
+            openSuccessModal()
         } catch (error) {
-            const errorMessage = error.inner.reduce((errorMessage, err) => errorMessage + (err.message + "\n"), "")
-            openModal("Erro", errorMessage)
+            const errorMessage = error.inner.reduce((errorMessage, err) => errorMessage + (err.message + "<br>"), "")
+            console.log(errorMessage)
+            openErrorModal("Erro", errorMessage)
         }
 
     }
 
 
-    const openModal = (title, message, icon) => {
+    const openErrorModal = (title, message, icon) => {
         Swal.fire({
             title: title,
-            text: message,
-            confirmButtonText: 'Ok',
+            html: message,
+            confirmButtonText: 'OK',
             confirmButtonColor: "#0b1a72",
-            icon: icon
+            icon: icon,
+            buttonsStyling: false,
         })
     }
+
+    const openSuccessModal = (title, message, icon) => {
+        Swal.fire({
+            title: 'Mensagem cadastrada!\nDeseja cadastrar outra mensagem?',
+            showDenyButton: true,
+            confirmButtonText: 'Sim',
+            confirmButtonColor: "#0b1a72",
+            denyButtonText: 'Não',
+            denyButtonColor: "#0b1a72",
+            buttonsStyling: false,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                history.go(0)
+            } else if (result.isDenied) {
+                history.push('/list')
+            }
+        })
+    }
+
 
     const postMessage = async (body) => await api.post('/messages', body)
 
