@@ -42,14 +42,8 @@ const MessageList = () => {
         })
     }
 
-    const search = async () => {  
-        let triggerQuery, channelQuery, timerQuery = ""
-
-        if (triggerValue) triggerQuery = `trigger=${triggerValue}`
-        if (channelValue) channelQuery = `channel=${channelValue}`
-        if (timerValue) timerQuery = `timer=${timerValue}`
-
-        let query = `/messages?${triggerQuery}&${channelQuery}&${timerQuery}`
+    const search = async () => {
+        let query = `/messages?trigger_like=${triggerValue}&channel_like=${channelValue}&timer_like=${timerValue}`
         console.log(query)
         const response = await api.get(query)
         console.log("search results", response.data)
@@ -92,13 +86,15 @@ const MessageList = () => {
 
             <div>
                 <table border="1" id="message-list-table">
-                    <tbody>
+                    <thead>
                         <tr>
                             <th>Gatilho</th>
                             <th>Canal</th>
                             <th>Tempo</th>
                             <th>Ações</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         {messages.map((el, key) =>
                             <tr key={key}>
                                 <td>{el.trigger}</td>

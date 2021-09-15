@@ -64,12 +64,13 @@ const Message = () => {
     }
 
 
-    const openModal = (title, message) => {
+    const openModal = (title, message, icon) => {
         Swal.fire({
             title: title,
             text: message,
             confirmButtonText: 'Ok',
-            confirmButtonColor: "#0b1a72"
+            confirmButtonColor: "#0b1a72",
+            icon: icon
         })
     }
 

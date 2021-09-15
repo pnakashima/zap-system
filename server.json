@@ -139,6 +139,27 @@
       "trigger": "abertura_conta",
       "timer": "16",
       "message": "as"
+    },
+    {
+      "id": "10250cb",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "15",
+      "message": "a"
+    },
+    {
+      "id": "1236691",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "15",
+      "message": "a"
+    },
+    {
+      "id": "11a507c",
+      "channel": "email",
+      "trigger": "abertura_conta",
+      "timer": "15",
+      "message": "a"
     }
   ],
   "channels": [
