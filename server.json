@@ -384,6 +384,55 @@
       "trigger": "falou_com_atendimento",
       "timer": "147",
       "message": "ddd"
+    },
+    {
+      "id": "13168c8",
+      "channel": "sms",
+      "trigger": "falou_com_atendimento",
+      "timer": "369",
+      "message": "pppppppp"
+    },
+    {
+      "id": "1a37165",
+      "channel": "whatsapp",
+      "trigger": "falou_com_atendimento",
+      "timer": "147",
+      "message": "ttttttttt"
+    },
+    {
+      "id": "1713a75",
+      "channel": "email",
+      "trigger": "falou_com_atendimento",
+      "timer": "369",
+      "message": "ggggggggggggggggggg"
+    },
+    {
+      "id": "1ff0bed",
+      "channel": "whatsapp",
+      "trigger": "falou_com_atendimento",
+      "timer": "123",
+      "message": "dddddddddd"
+    },
+    {
+      "id": "1814121",
+      "channel": "sms",
+      "trigger": "criou_chave_pix",
+      "timer": "258",
+      "message": "sssssssssss"
+    },
+    {
+      "id": "1dc7dc9",
+      "channel": "whatsapp",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "147",
+      "message": "aeafeefa"
+    },
+    {
+      "id": "1469e39",
+      "channel": "email",
+      "trigger": "deletou_chave_pix",
+      "timer": "23123",
+      "message": "aaeraer"
     }
   ],
   "channels": [

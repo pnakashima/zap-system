@@ -12,12 +12,6 @@ const MessageFields = (props) => {
 
     const [triggers, setTriggers] = useState([])
     const [channels, setChannels] = useState([])
-    // const [timer, setTimer] = useState("")
-    // const [messages, setMessages] = useState([])
-    // const [message, setMessage] = useState("")
-    // const [triggerValue, setTriggerValue] = useState("")
-    // const [channelValue, setChannelValue] = useState("")
-    // const [timerValue, setTimerValue] = useState("")
 
     const getInfo = async () => {
         try {

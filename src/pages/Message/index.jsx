@@ -10,8 +10,8 @@ import { useDispatch } from 'react-redux'
 
 const Message = () => {
 
-    const [timer, setTimer] = useState("")
-    const [message, setMessage] = useState("")
+    const [timerValue, setTimerValue] = useState("")
+    const [messageValue, setMessageValue] = useState("")
     const [triggerValue, setTriggerValue] = useState("")
     const [channelValue, setChannelValue] = useState("")
 
@@ -26,13 +26,14 @@ const Message = () => {
         message: yup.string().required('Campo "Mensagem" obrigatório. '),
     })
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         const body = {
             "id": Math.floor((1 + Math.random()) * 0x1000000).toString(16),
             "channel": channelValue,
             "trigger": triggerValue,
-            "timer": timer,
-            "message": message
+            "timer": timerValue,
+            "message": messageValue
         }
 
         try {
@@ -70,9 +71,12 @@ const Message = () => {
             denyButtonColor: "#0b1a72",
             buttonsStyling: false,
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                history.go(0)
+                //history.go(0)
+                setTriggerValue("")
+                setChannelValue("")
+                setTimerValue("")
+                setMessageValue("")
             } else if (result.isDenied) {
                 history.push('/list')
             }
@@ -86,18 +90,18 @@ const Message = () => {
             <MessageFields
                 isMessagePage={true}
                 title={"Nova Mensagem"}
-                funcButton1={() => history.push('/list')}
                 labelButton1={"Voltar"}
-                funcButton2={handleSubmit}
+                funcButton1={() => history.push('/list')}
                 labelButton2={"Cadastrar"}
+                funcButton2={handleSubmit}
                 triggerValue={triggerValue}
                 channelValue={channelValue}
-                timer={timer}
-                message={message}
+                timerValue={timerValue}
+                messageValue={messageValue}
                 handleTrigger={setTriggerValue}
                 handleChannel={setChannelValue}
-                handleTimer={setTimer}
-                handleMessage={setMessage}
+                handleTimer={setTimerValue}
+                handleMessage={setMessageValue}
             />
         </>
     );

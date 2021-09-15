@@ -26,7 +26,7 @@ const LineChart = () => (
     {/* <div className='header'>
       <h1 className='title'>Line Chart</h1>
     </div> */}
-    <Line data={data} options={options} height={400} />
+    <Line data={data} options={options} height={300} />
   </>
 );
 

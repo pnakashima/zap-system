@@ -38,7 +38,8 @@ const MessageList = () => {
         })
     }
 
-    const search = async () => {
+    const search = async (e) => {
+        e.preventDefault()
         let query = `/messages?trigger_like=${triggerValue}&channel_like=${channelValue}&timer_like=${timerValue}`
         const response = await api.get(query)
         setMessages(response.data)
@@ -46,7 +47,7 @@ const MessageList = () => {
 
 
     return (
-        <>
+        <div ref={refPageTop}>
             <MessageFields
                 isMessagePage={false}
                 title={"Mensagens"}
@@ -91,7 +92,7 @@ const MessageList = () => {
             >
                 Voltar ao topo
             </button>
-        </>
+        </div>
     );
 }
 
