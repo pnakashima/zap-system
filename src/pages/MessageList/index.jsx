@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router";
 import api from "../../services/api";
 import Swal from 'sweetalert2'
@@ -14,6 +14,8 @@ const MessageList = () => {
     const [timerValue, setTimerValue] = useState("")
 
     const history = useHistory()
+
+    const refPageTop = useRef(null)
 
     const getInfo = async () => {
         try {
@@ -53,7 +55,7 @@ const MessageList = () => {
 
     return (
         <>
-            <div className="message-list-top-container">
+            <div className="message-list-top-container" ref={refPageTop}>
                 <h1 className="body-title">Mensagens</h1>
                 <span>
                     <button onClick={search}>Pesquisar</button>
@@ -106,6 +108,13 @@ const MessageList = () => {
                     </tbody>
                 </table>
             </div>
+
+            <button
+                style={{ display: "flex", margin: "10px auto" }}
+                onClick={() => { window.scrollTo(0, refPageTop.current.offsetTop) }}
+            >
+                Voltar ao topo
+            </button>
         </>
     );
 }
