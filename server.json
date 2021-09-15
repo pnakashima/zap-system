@@ -244,6 +244,104 @@
       "trigger": "fez_pix",
       "timer": "3636",
       "message": "pjpijp"
+    },
+    {
+      "id": "12d51ad",
+      "channel": "sms",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "456",
+      "message": "dddd"
+    },
+    {
+      "id": "1d3e64f",
+      "channel": "email",
+      "trigger": "criou_chave_pix",
+      "timer": "789",
+      "message": "annafagharhar"
+    },
+    {
+      "id": "1e5993a",
+      "channel": "sms",
+      "trigger": "deletou_chave_pix",
+      "timer": "123",
+      "message": "lurlukfkkf"
+    },
+    {
+      "id": "1137cb3",
+      "channel": "email",
+      "trigger": "recarregou_celular",
+      "timer": "147",
+      "message": "oaoiaejioaeio"
+    },
+    {
+      "id": "108cf78",
+      "channel": "email",
+      "trigger": "alterou_dados_pessois",
+      "timer": "258",
+      "message": "lllll"
+    },
+    {
+      "id": "19060dc",
+      "channel": "sms",
+      "trigger": "recarregou_celular",
+      "timer": "369",
+      "message": "ss"
+    },
+    {
+      "id": "1dfd8f4",
+      "channel": "email",
+      "trigger": "fez_pix",
+      "timer": "147",
+      "message": "aa"
+    },
+    {
+      "id": "1e3e63d",
+      "channel": "sms",
+      "trigger": "recarregou_celular",
+      "timer": "258",
+      "message": "k"
+    },
+    {
+      "id": "1d34f31",
+      "channel": "sms",
+      "trigger": "alterou_dados_pessois",
+      "timer": "369",
+      "message": "kkk"
+    },
+    {
+      "id": "137d8a1",
+      "channel": "sms",
+      "trigger": "alterou_dados_pessois",
+      "timer": "369",
+      "message": "kkk"
+    },
+    {
+      "id": "1956b0d",
+      "channel": "email",
+      "trigger": "consultou_saldo",
+      "timer": "369",
+      "message": "ccc"
+    },
+    {
+      "id": "10c4300",
+      "channel": "sms",
+      "trigger": "consultou_saldo",
+      "timer": "147",
+      "message": "ll"
+    },
+    {
+      "id": "1c46bb9",
+      "channel": "sms",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "258",
+      "message": "jj"
+    },
+    {
+      "id": "1278626",
+      "channel": "email",
+      "trigger": "deletou_chave_pix",
+      "timer": "369",
+      "message": "jj"
     }
   ],
   "channels": [
@@ -297,6 +395,5 @@
       "id": 9,
       "name": "falou_com_atendimento"
     }
-    
   ]
 }

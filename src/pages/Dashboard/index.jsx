@@ -90,10 +90,12 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <div style={{width: "100%"}}>
+            {/* <div style={{width: "100%"}}> */}
+            <div className="graph-area">
                 <HorizontalBarChart />
             </div>
-            <div style={{width: "100%"}}>
+            {/* <div style={{width: "100%"}}> */}
+            <div className="graph-area">
                 <LineChart />
             </div>
         </div>

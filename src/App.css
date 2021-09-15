@@ -136,14 +136,6 @@ input[type=text], select, textarea {
 }
 
 
-
-
-
-
-
-
-
-
 .dashboard {
   display: flex;
   width: 80%;
@@ -153,21 +145,10 @@ input[type=text], select, textarea {
   padding: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.graph-area {
+  width: 100%;
+  padding: 20px;
+}
 
 
 /* #portal .container {

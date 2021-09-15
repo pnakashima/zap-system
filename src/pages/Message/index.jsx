@@ -5,7 +5,8 @@ import api from '../../services/api'
 import * as yup from 'yup'
 import Swal from 'sweetalert2'
 import MessageFields from '../../components/MessageFields'
-
+import { addMessage } from '../../store/modules/appData/actions'
+import { useDispatch } from 'react-redux'
 
 const Message = () => {
 
@@ -18,6 +19,8 @@ const Message = () => {
     // const [errorMessages, setErrorMessages] = useState({})
 
     const history = useHistory()
+
+    const dispatch = useDispatch()
 
     const getInfo = async () => {
         try {
@@ -56,9 +59,10 @@ const Message = () => {
             console.log("isValid", isValid)
             postMessage(body)
             openSuccessModal()
+            dispatch(addMessage(body))
         } catch (error) {
+            console.log(error)
             const errorMessage = error.inner.reduce((errorMessage, err) => errorMessage + (err.message + "<br>"), "")
-            console.log(errorMessage)
             openErrorModal("Erro", errorMessage)
         }
 
@@ -144,7 +148,6 @@ const Message = () => {
                     onChange={(e) => setMessage(e.target.value)}
                 />
             </div>
-
         </>
     );
 }
