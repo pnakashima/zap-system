@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import api from "../../services/api";
+// import { useSelector } from "react-redux";
 
 const MessageFields = (props) => {
 
     const { isMessagePage, title,
-        funcButton1, labelButton1,
-        funcButton2, labelButton2,
+        labelButton1, funcButton1, labelButton2, funcButton2,
         triggerValue, channelValue, timerValue, messageValue,
         handleTrigger, handleChannel, handleTimer, handleMessage
     } = props
@@ -28,15 +28,21 @@ const MessageFields = (props) => {
         getInfo()
     }, [])
 
+
+    // const triggers = useSelector((state) => state.appData.triggers)
+    // const channels = useSelector((state) => state.appData.channels)
+
     return (
         <>
-            <form>
+            <form onSubmit={funcButton1}>
                 <div className="message-top-container">
-                    <h1 className="body-title">{title}</h1>
-                    <span>
-                        <button onClick={funcButton1}>{labelButton1}</button>
-                        <button onClick={funcButton2}>{labelButton2}</button>
-                    </span>
+                    <div className="body-title">
+                        <h3>{title}</h3>
+                    </div>
+                    <div className="top-buttons">
+                        <button type="submit">{labelButton1}</button>
+                        <button type="button" onClick={funcButton2}>{labelButton2}</button>
+                    </div>
                 </div>
 
                 <div className="message-filter-container">

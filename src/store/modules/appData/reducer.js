@@ -1,3 +1,7 @@
+
+
+
+
 const INITIAL_STATE = {
     messages: [],
     channels: [],
@@ -6,22 +10,29 @@ const INITIAL_STATE = {
 
 
 const appData = (state = INITIAL_STATE, action) => {
-    console.log("reducer action", action)
 
     switch (action.type) {
+
         case 'ADD_MESSAGE':
             console.log("state", state)
             return {
                 ...state,
                 messages: [
                     ...state.messages,
-                    action.payload.message 
+                    action.payload.message
                 ]
             }
+
+        case 'LOAD_INFO':
+            const { info } = action.payload
+            return {
+                ...info
+            }
+
         default:
             return state
+            
     }
-
 
 }
 

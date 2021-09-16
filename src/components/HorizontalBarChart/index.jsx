@@ -2,16 +2,16 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
 const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green'],
+    labels: ['Zapelino', 'OI', 'BRB', 'BRB Nacão'],
     datasets: [
         {
-            label: '# of Votes',
-            data: [12, 19, 3, 5],
+            label: 'Quantidade de contas abertas',
+            data: [2350, 1300, 550, 1000],
             backgroundColor: [
-                'red',
                 'blue',
-                'yellow',
                 'green',
+                'yellow',
+                'red',
             ]
         },
     ],
@@ -28,10 +28,8 @@ const options = {
 
 const HorizontalBarChart = () => (
     <>
-        {/* <div className='header'>
-            <h1 className='title'>Horizontal Bar Chart</h1>
-        </div> */}
-        <Bar data={data} options={options} height={100} />
+        <p>Contas Abertas - BOT</p>
+        <Bar data={data} options={options} height={50} />
     </>
 );
 

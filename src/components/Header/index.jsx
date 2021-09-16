@@ -12,8 +12,6 @@ const Header = () => {
             <div>
                 <span onClick={() => history.push("/")}>Dashboard</span>
                 <span onClick={() => history.push("/list")}>Mensagens</span>
-                {/* <a href="/">Dashboard</a>
-                <a href="/list">Mensagens</a> */}
             </div>
         </div>)
 

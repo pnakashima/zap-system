@@ -5,8 +5,10 @@ import api from '../../services/api'
 import * as yup from 'yup'
 import Swal from 'sweetalert2'
 import MessageFields from '../../components/MessageFields'
-import { addMessage } from '../../store/modules/appData/actions'
-import { useDispatch } from 'react-redux'
+// import { addMessage } from '../../store/modules/appData/actions'
+// import { useDispatch } from 'react-redux'
+// import { useSelector } from "react-redux"
+
 
 const Message = () => {
 
@@ -17,18 +19,22 @@ const Message = () => {
 
     const history = useHistory()
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const schema = yup.object().shape({
-        trigger: yup.string().required('Campo "Gatilho" obrigatório. '),
-        channel: yup.string().required('Campo "Canal" obrigatório. '),
-        timer: yup.number().required('Campo "Timer" obrigatório. ').typeError('Campo "Timer" inválido. ').positive('Campo "Timer" inválido. ').integer('Campo "Timer" inválido. '),
-        message: yup.string().required('Campo "Mensagem" obrigatório. '),
+        trigger: yup.string().required('Escolha um Gatilho'),
+        channel: yup.string().required('Escolha um Canal'),
+        timer: yup.number().required()
+        .typeError('Digite o número de horas do Timer (apenas números)')
+        .positive('Digite o número de horas do Timer (números positivos apenas)')
+        .integer('Digite o número de horas do Timer (números inteiros apenas)'),
+        message: yup.string().required('Digite a mensagem que será enviada ao usuário'),
     })
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const body = {
+        let body = {
             "id": Math.floor((1 + Math.random()) * 0x1000000).toString(16),
             "channel": channelValue,
             "trigger": triggerValue,
@@ -38,14 +44,16 @@ const Message = () => {
 
         try {
             const isValid = await schema.validate(body, { abortEarly: false })
-            console.log("isValid", isValid)
+            if (isValid) {
+                body.timer = `${timerValue}:00`
+            }
             postMessage(body)
             openSuccessModal()
-            // dispatch(addMessage(body))
+            //dispatch(addMessage(body))
         } catch (error) {
             console.log(error)
             const errorMessage = error.inner.reduce((errorMessage, err) => errorMessage + (err.message + "<br>"), "")
-            openErrorModal("Erro", errorMessage)
+            openErrorModal("Por favor corrija os seguintes erros:", errorMessage)
         }
 
     }
@@ -61,6 +69,7 @@ const Message = () => {
         })
     }
 
+    
     const openSuccessModal = (title, message, icon) => {
         Swal.fire({
             title: 'Mensagem cadastrada!\nDeseja cadastrar outra mensagem?',
@@ -90,10 +99,10 @@ const Message = () => {
             <MessageFields
                 isMessagePage={true}
                 title={"Nova Mensagem"}
-                labelButton1={"Voltar"}
-                funcButton1={() => history.push('/list')}
-                labelButton2={"Cadastrar"}
-                funcButton2={handleSubmit}
+                labelButton1={"Cadastrar"}
+                funcButton1={handleSubmit}
+                labelButton2={"Voltar"}
+                funcButton2={() => history.push('/list')}
                 triggerValue={triggerValue}
                 channelValue={channelValue}
                 timerValue={timerValue}
