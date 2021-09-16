@@ -1,36 +1,37 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import { genBgColors } from '../../utils/genBgColors';
 
-const data = {
-    labels: ['Zapelino', 'OI', 'BRB', 'BRB Nacão'],
-    datasets: [
-        {
-            label: 'Quantidade de contas abertas',
-            data: [2350, 1300, 550, 1000],
-            backgroundColor: [
-                'blue',
-                'green',
-                'yellow',
-                'red',
-            ]
+const HorizontalBarChart = ({ title, legend, dataX, dataY }) => {
+
+    const options = {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom', display: false},
         },
-    ],
-};
+        //maintainAspectRatio: false, 
+    };
 
-const options = {
-    indexAxis: 'y',
-    responsive: true,
-    plugins: {
-        legend: { position: 'top', },
-    },
-    options: { maintainAspectRatio: false }
-};
+    const data = {
+        labels: dataX,
+        datasets: [
+            {
+                label: legend,
+                data: dataY,
+                backgroundColor: genBgColors(dataY)
+            },
+        ],
+    };
 
-const HorizontalBarChart = () => (
-    <>
-        <p>Contas Abertas - BOT</p>
-        <Bar data={data} options={options} height={50} />
-    </>
-);
+    
+
+    return (
+        <>
+            <p>{title}</p>
+            <Bar data={data} options={options} />
+        </>
+    )
+}
 
 export default HorizontalBarChart;

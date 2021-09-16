@@ -7,7 +7,6 @@ import MessageFields from "../../components/MessageFields";
 
 const MessageList = () => {
 
-    // const [messages, setMessages] = useState([])
     const [triggerValue, setTriggerValue] = useState("")
     const [channelValue, setChannelValue] = useState("")
     const [timerValue, setTimerValue] = useState("")
@@ -28,6 +27,7 @@ const MessageList = () => {
     useEffect(() => {
         getInfo()
     }, [])
+
 
     const showMessage = (message) => {
         Swal.fire({

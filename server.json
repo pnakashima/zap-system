@@ -32,7 +32,7 @@
       "id": 1631313726738,
       "channel": "email",
       "trigger": "fez_pix",
-      "timer": "2323",
+      "timer": "23:00",
       "message": "23232323"
     },
     {
@@ -41,13 +41,6 @@
       "timer": "20:25",
       "message": "Oi, será que podemos falar sobre sua conta",
       "id": 1631313726739
-    },
-    {
-      "channel": "asdfa",
-      "trigger": "asdfas",
-      "timer": "asdfa",
-      "message": "asdfasd",
-      "id": 1631313726740
     },
     {
       "id": "1779a3c",
@@ -62,6 +55,13 @@
       "trigger": "falou_com_atendimento",
       "timer": "15:00",
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut est a lorem posuere sagittis. Maecenas nec suscipit tortor. Sed consectetur, urna sed posuere molestie, leo ante viverra massa, nec facilisis magna augue in justo. Proin vestibulum libero massa, ac pharetra dolor imperdiet a. Quisque bibendum dignissim enim vestibulum auctor. Donec sapien nisi, malesuada pretium arcu ac, dictum blandit ipsum. Duis finibus posuere ante, in auctor tortor porta ut. Praesent lacus purus, fringilla nec lorem non, placerat sollicitudin dolor. Nulla id pulvinar ligula. Pellentesque et nisi sed elit malesuada pretium. Ut facilisis gravida ultricies. Nunc dignissim scelerisque dolor et suscipit. In hac habitasse platea dictumst. Maecenas lacus odio, sagittis quis rhoncus vel, fringilla at quam."
+    },
+    {
+      "id": "1a8aca1",
+      "channel": "email",
+      "trigger": "recarregou_celular",
+      "timer": "36:00",
+      "message": "Proin ullamcorper nisi in urna fringilla commodo. Nulla facilisi. Mauris aliquam scelerisque vulputate. Donec eget elit sit amet nibh consequat lacinia. Pellentesque eget hendrerit nisi. Praesent nisi ex, tempor ac porta vitae, luctus ac purus. Nullam et elementum massa. Sed eu tincidunt ligula. Fusce condimentum risus erat, ac eleifend ex cursus non. Aenean malesuada id diam sit amet hendrerit. Morbi posuere nulla mi, eget elementum orci ornare non."
     }
   ],
   "channels": [

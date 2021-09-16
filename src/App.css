@@ -29,7 +29,7 @@ span {
 .dashboard {
   display: flex;
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
   flex-direction: column;
   align-items: center;
   padding: 20px;
@@ -40,7 +40,7 @@ span {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto;
   align-items: center;
 }
 
