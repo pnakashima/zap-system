@@ -7,8 +7,6 @@ import Swal from 'sweetalert2'
 import MessageFields from '../../components/MessageFields'
 import { addMessage } from '../../store/modules/appData/actions'
 import { useDispatch } from 'react-redux'
-// import { useSelector } from "react-redux"
-
 
 const NewMessage = () => {
 
@@ -25,12 +23,11 @@ const NewMessage = () => {
         trigger: yup.string().required('Escolha um Gatilho'),
         channel: yup.string().required('Escolha um Canal'),
         timer: yup.number().required()
-        .typeError('Digite o número de horas do Timer (apenas números)')
-        .positive('Digite o número de horas do Timer (números positivos apenas)')
-        .integer('Digite o número de horas do Timer (números inteiros apenas)'),
+            .typeError('Digite o número de horas do Timer (apenas números)')
+            .positive('Digite o número de horas do Timer (números positivos apenas)')
+            .integer('Digite o número de horas do Timer (números inteiros apenas)'),
         message: yup.string().required('Digite a mensagem que será enviada ao usuário'),
     })
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -69,7 +66,6 @@ const NewMessage = () => {
         })
     }
 
-    
     const openSuccessModal = (title, message, icon) => {
         Swal.fire({
             title: 'Mensagem cadastrada!\nDeseja cadastrar outra mensagem?',
@@ -81,7 +77,6 @@ const NewMessage = () => {
             buttonsStyling: false,
         }).then((result) => {
             if (result.isConfirmed) {
-                //history.go(0)
                 setTriggerValue("")
                 setChannelValue("")
                 setTimerValue("")

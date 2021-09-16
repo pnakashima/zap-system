@@ -1,5 +1,6 @@
 import HorizontalBarChart from "../../components/HorizontalBarChart"
 import LineChart from "../../components/LineChart"
+import PieChart from "../../components/PieChart"
 import { useEffect, useState } from "react"
 import api from "../../services/api"
 import { useDispatch } from 'react-redux';
@@ -10,7 +11,6 @@ const Dashboard = () => {
     const [messages, setMessages] = useState([])
     const [triggers, setTriggers] = useState([])
     const [channels, setChannels] = useState([])
-    // const [info, setInfo] = useState({})
     const dispatch = useDispatch()
 
     const getInfo = async () => {
@@ -21,12 +21,6 @@ const Dashboard = () => {
             setTriggers(triggers.data)
             const channels = await api.get('/channels')
             setChannels(channels.data)
-            // const info = {
-            //     triggers: triggers.data,
-            //     channels: channels.data,
-            //     messages: messages.data
-            // }
-            // setInfo(info)
         } catch (error) {
             console.log(error)
         }
@@ -38,6 +32,20 @@ const Dashboard = () => {
 
     const info = { triggers, channels, messages }
     dispatch(loadInfo(info))
+
+    // const countKeys = (arr, key) => {
+    //     if (arr.length > 0) {
+    //         console.log("arr", arr)
+    //         arr.reduce((sums, item) => {
+    //             const itemKey = `item.${key}`
+    //             sums[itemKey] = (sums[itemKey] || 0) + 1
+    //             console.log("sums", sums)
+    //             return [Object.keys(sums), Object.values(sums)]
+    //         }, {})
+    //     }
+    // }
+
+    // const [triggerKeys, triggerValues] = countKeys(messages, "trigger")
 
 
     const triggerData = messages.reduce((sums, message) => {
@@ -63,10 +71,10 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <div className="graph-area" >
-                <HorizontalBarChart title={"Gatilhos"} legend={"Quantidade de Gatilhos"} dataX={triggerKeys} dataY={triggerValues} />
+                <HorizontalBarChart title={"Gatilhos"} legend={"Gatilhos"} dataX={triggerKeys} dataY={triggerValues} />
             </div>
-            <div className="graph-area" >
-                <HorizontalBarChart title={"Canais"} legend={"Chamadas por Canal"} dataX={channelKeys} dataY={channelValues} />
+            <div className="graph-area" style={{width:"50%"}} >
+                <PieChart title={"Canais"} legend={"Canais"} dataX={channelKeys} dataY={channelValues} />
             </div>
             <div className="graph-area" >
                 <LineChart title={"Timers"} legend={"Timers"} dataX={timerKeys} dataY={timerValues} />

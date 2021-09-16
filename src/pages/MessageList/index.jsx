@@ -13,27 +13,15 @@ const MessageList = () => {
     const [messages, setMessages] = useState([])
 
     const history = useHistory()
+
     const refPageTop = useRef(null)
-
-    // const getInfo = async () => {
-    //     try {
-    //         const messages = await api.get('/messages')
-    //         setMessages(messages.data)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getInfo()
-    // }, [])
 
     const storeMessages = useSelector((state) => state.appData.messages)
 
     useEffect(() => {
         setMessages(storeMessages)
     }, [storeMessages])
-    
+
 
     const showMessage = (message) => {
         Swal.fire({

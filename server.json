@@ -118,6 +118,20 @@
       "trigger": "fex_transferencia_outro_banco",
       "timer": "1:00",
       "message": "Cras commodo semper arcu, vel posuere lorem ultricies a. Donec sit amet nisl a ex blandit finibus id ut leo. "
+    },
+    {
+      "id": "1c099ac",
+      "channel": "whatsapp",
+      "trigger": "abertura_conta",
+      "timer": "12:00",
+      "message": "Nullam et elementum massa. Sed eu tincidunt ligula. Fusce condimentum risus erat, ac eleifend ex cursus non. Aenean malesuada id diam sit amet hendrerit."
+    },
+    {
+      "id": "1a2ba7e",
+      "channel": "sms",
+      "trigger": "abertura_conta",
+      "timer": "2:00",
+      "message": "Mauris pharetra nisl sed mi mollis euismod sed sit amet lacus. Integer faucibus egestas lectus sed elementum. Morbi faucibus maximus neque quis eleifend. Cras commodo semper arcu, vel posuere lorem ultricies a. Donec sit amet nisl a ex blandit finibus id ut leo. Vestibulum sodales est at ligula maximus vehicula."
     }
   ],
   "channels": [

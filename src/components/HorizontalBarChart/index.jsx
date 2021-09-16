@@ -8,9 +8,9 @@ const HorizontalBarChart = ({ title, legend, dataX, dataY }) => {
         indexAxis: 'y',
         responsive: true,
         plugins: {
-            legend: { position: 'bottom', display: false},
+            legend: { position: 'bottom', display: false },
         },
-        //maintainAspectRatio: false, 
+        // maintainAspectRatio: false, 
     };
 
     const data = {
@@ -19,13 +19,12 @@ const HorizontalBarChart = ({ title, legend, dataX, dataY }) => {
             {
                 label: legend,
                 data: dataY,
-                backgroundColor: genBgColors(dataY)
+                backgroundColor: genBgColors(dataY),
+                barThickness: 20,
             },
         ],
     };
-
     
-
     return (
         <>
             <p>{title}</p>
