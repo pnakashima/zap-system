@@ -62,6 +62,62 @@
       "trigger": "recarregou_celular",
       "timer": "36:00",
       "message": "Proin ullamcorper nisi in urna fringilla commodo. Nulla facilisi. Mauris aliquam scelerisque vulputate. Donec eget elit sit amet nibh consequat lacinia. Pellentesque eget hendrerit nisi. Praesent nisi ex, tempor ac porta vitae, luctus ac purus. Nullam et elementum massa. Sed eu tincidunt ligula. Fusce condimentum risus erat, ac eleifend ex cursus non. Aenean malesuada id diam sit amet hendrerit. Morbi posuere nulla mi, eget elementum orci ornare non."
+    },
+    {
+      "id": "1f5c0b8",
+      "channel": "whatsapp",
+      "trigger": "alterou_dados_pessois",
+      "timer": "30:00",
+      "message": "Maecenas blandit orci lobortis nunc viverra, eu tempor ipsum volutpat. Aliquam erat volutpat. Aenean nunc nunc, dapibus id elit sit amet, tincidunt fringilla nulla. Nam vel hendrerit quam. Etiam ullamcorper congue bibendum. Donec ornare velit nisl, vel fermentum lectus lobortis at. Curabitur iaculis diam non ipsum lacinia, eu aliquam massa fermentum. Donec fringilla viverra iaculis. Etiam placerat vel ligula ac tristique. Duis justo enim, molestie vitae eleifend eu, dignissim non ante. Phasellus quis turpis id elit consequat sagittis. Praesent id volutpat sem. Nulla neque nunc, feugiat vel maximus aliquet, imperdiet non elit. Duis sodales erat at facilisis accumsan."
+    },
+    {
+      "id": "1722663",
+      "channel": "sms",
+      "trigger": "consultou_saldo",
+      "timer": "19:00",
+      "message": "Proin ullamcorper nisi in urna fringilla commodo. Nulla facilisi. Mauris aliquam scelerisque vulputate. Donec eget elit sit amet nibh consequat lacinia. Pellentesque eget hendrerit nisi. Praesent nisi ex, tempor ac porta vitae, luctus ac purus. Nullam et elementum massa. Sed eu tincidunt ligula. Fusce condimentum risus erat, ac eleifend ex cursus non. Aenean malesuada id diam sit amet hendrerit. Morbi posuere nulla mi, eget elementum orci ornare non."
+    },
+    {
+      "id": "1bee31b",
+      "channel": "email",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "6:00",
+      "message": "Donec sodales vehicula ligula, et elementum leo sagittis in. Pellentesque maximus lectus risus, vitae pretium erat scelerisque vel. Morbi eget magna vestibulum, luctus dui eu, mattis eros. Nullam sed erat at risus convallis interdum. Mauris mollis lectus et libero dapibus interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur imperdiet tortor, non maximus sapien vulputate a. Aliquam vel leo tortor. Vestibulum finibus est sed orci auctor hendrerit. Suspendisse at congue lorem. Curabitur non nunc semper, elementum justo gravida, pulvinar neque. Nunc id consequat augue, ac blandit est. Donec malesuada, justo in dapibus hendrerit, elit turpis scelerisque felis, ac viverra lorem nibh id tellus. Sed vestibulum odio magna, ut malesuada lacus aliquet sed."
+    },
+    {
+      "id": "129ebb7",
+      "channel": "sms",
+      "trigger": "deletou_chave_pix",
+      "timer": "12:00",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida turpis iaculis dictum vehicula. Aenean et nibh condimentum, molestie felis in, fringilla nisi."
+    },
+    {
+      "id": "1b7f3c1",
+      "channel": "email",
+      "trigger": "criou_chave_pix",
+      "timer": "13:00",
+      "message": "Donec sodales vehicula ligula, et elementum leo sagittis in. Pellentesque maximus lectus risus, vitae pretium erat scelerisque vel. Morbi eget magna vestibulum, luctus dui eu, mattis eros. Nullam sed erat at risus convallis interdum."
+    },
+    {
+      "id": "164240c",
+      "channel": "sms",
+      "trigger": "consultou_saldo",
+      "timer": "2:00",
+      "message": "Donec volutpat lectus suscipit nunc rhoncus placerat. Suspendisse potenti. Cras sed iaculis nulla."
+    },
+    {
+      "id": "1cd8a33",
+      "channel": "sms",
+      "trigger": "criou_chave_pix",
+      "timer": "1:00",
+      "message": "Etiam ullamcorper, tellus non porttitor bibendum, dolor sapien consequat tortor, at sagittis augue ex nec nunc. Pellentesque vitae elit accumsan, consectetur leo ut, laoreet est."
+    },
+    {
+      "id": "1fbaa59",
+      "channel": "whatsapp",
+      "trigger": "fex_transferencia_outro_banco",
+      "timer": "1:00",
+      "message": "Cras commodo semper arcu, vel posuere lorem ultricies a. Donec sit amet nisl a ex blandit finibus id ut leo. "
     }
   ],
   "channels": [

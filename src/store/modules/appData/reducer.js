@@ -14,7 +14,7 @@ const appData = (state = INITIAL_STATE, action) => {
     switch (action.type) {
 
         case 'ADD_MESSAGE':
-            console.log("state", state)
+            //console.log("state", state)
             return {
                 ...state,
                 messages: [

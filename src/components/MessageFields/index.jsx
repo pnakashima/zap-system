@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../../services/api";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const MessageFields = (props) => {
 
@@ -13,24 +13,28 @@ const MessageFields = (props) => {
     const [triggers, setTriggers] = useState([])
     const [channels, setChannels] = useState([])
 
-    const getInfo = async () => {
-        try {
-            const triggers = await api.get('/triggers')
-            setTriggers(triggers.data)
-            const channels = await api.get('/channels')
-            setChannels(channels.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // const getInfo = async () => {
+    //     try {
+    //         const triggers = await api.get('/triggers')
+    //         setTriggers(triggers.data)
+    //         const channels = await api.get('/channels')
+    //         setChannels(channels.data)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     getInfo()
+    // }, [])
+
+    const storeTriggers = useSelector((state) => state.appData.triggers)
+    const storeChannels = useSelector((state) => state.appData.channels)
 
     useEffect(() => {
-        getInfo()
-    }, [])
-
-
-    // const triggers = useSelector((state) => state.appData.triggers)
-    // const channels = useSelector((state) => state.appData.channels)
+        setTriggers(storeTriggers)
+        setChannels(storeChannels)
+    }, [storeTriggers, storeChannels])
 
     return (
         <>

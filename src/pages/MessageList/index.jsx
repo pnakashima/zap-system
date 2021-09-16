@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import api from "../../services/api";
 import Swal from 'sweetalert2'
 import MessageFields from "../../components/MessageFields";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const MessageList = () => {
 
@@ -15,19 +15,25 @@ const MessageList = () => {
     const history = useHistory()
     const refPageTop = useRef(null)
 
-    const getInfo = async () => {
-        try {
-            const messages = await api.get('/messages')
-            setMessages(messages.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // const getInfo = async () => {
+    //     try {
+    //         const messages = await api.get('/messages')
+    //         setMessages(messages.data)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     getInfo()
+    // }, [])
+
+    const storeMessages = useSelector((state) => state.appData.messages)
 
     useEffect(() => {
-        getInfo()
-    }, [])
-
+        setMessages(storeMessages)
+    }, [storeMessages])
+    
 
     const showMessage = (message) => {
         Swal.fire({
@@ -83,7 +89,7 @@ const MessageList = () => {
                         )}
                     </tbody>
                 </table>
-            </div> 
+            </div>
 
             <button
                 style={{ display: "flex", margin: "10px auto" }}

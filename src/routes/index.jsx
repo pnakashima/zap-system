@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom'
 import Dashboard from '../pages/Dashboard'
-import Message from '../pages/Message'
+import NewMessage from '../pages/NewMessage'
 import MessageList from '../pages/MessageList'
 
 const Routes = () => {
@@ -16,7 +16,7 @@ const Routes = () => {
             </Route>
 
             <Route path="/message">
-                <Message />
+                <NewMessage />
             </Route>
         </Switch>
 

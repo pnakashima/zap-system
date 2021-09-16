@@ -5,12 +5,12 @@ import api from '../../services/api'
 import * as yup from 'yup'
 import Swal from 'sweetalert2'
 import MessageFields from '../../components/MessageFields'
-// import { addMessage } from '../../store/modules/appData/actions'
-// import { useDispatch } from 'react-redux'
+import { addMessage } from '../../store/modules/appData/actions'
+import { useDispatch } from 'react-redux'
 // import { useSelector } from "react-redux"
 
 
-const Message = () => {
+const NewMessage = () => {
 
     const [timerValue, setTimerValue] = useState("")
     const [messageValue, setMessageValue] = useState("")
@@ -19,7 +19,7 @@ const Message = () => {
 
     const history = useHistory()
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const schema = yup.object().shape({
         trigger: yup.string().required('Escolha um Gatilho'),
@@ -49,7 +49,7 @@ const Message = () => {
             }
             postMessage(body)
             openSuccessModal()
-            //dispatch(addMessage(body))
+            dispatch(addMessage(body))
         } catch (error) {
             console.log(error)
             const errorMessage = error.inner.reduce((errorMessage, err) => errorMessage + (err.message + "<br>"), "")
@@ -116,4 +116,4 @@ const Message = () => {
     );
 }
 
-export default Message;
+export default NewMessage;
