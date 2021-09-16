@@ -20,7 +20,7 @@ const HorizontalBarChart = ({ title, legend, dataX, dataY }) => {
                 label: legend,
                 data: dataY,
                 backgroundColor: genBgColors(dataY),
-                barThickness: 20,
+                //barThickness: 20,
             },
         ],
     };

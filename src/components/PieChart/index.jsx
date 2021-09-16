@@ -18,7 +18,7 @@ const PieChart = ({ title, legend, dataX, dataY }) => {
     return (
         <>
             <p>{title}</p>
-            <Pie data={data} width={50}/>
+            <Pie data={data} />
         </>
     )
 }

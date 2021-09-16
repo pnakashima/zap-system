@@ -11,6 +11,7 @@ const Dashboard = () => {
     const [messages, setMessages] = useState([])
     const [triggers, setTriggers] = useState([])
     const [channels, setChannels] = useState([])
+   
     const dispatch = useDispatch()
 
     const getInfo = async () => {
@@ -32,21 +33,6 @@ const Dashboard = () => {
 
     const info = { triggers, channels, messages }
     dispatch(loadInfo(info))
-
-    // const countKeys = (arr, key) => {
-    //     if (arr.length > 0) {
-    //         console.log("arr", arr)
-    //         arr.reduce((sums, item) => {
-    //             const itemKey = `item.${key}`
-    //             sums[itemKey] = (sums[itemKey] || 0) + 1
-    //             console.log("sums", sums)
-    //             return [Object.keys(sums), Object.values(sums)]
-    //         }, {})
-    //     }
-    // }
-
-    // const [triggerKeys, triggerValues] = countKeys(messages, "trigger")
-
 
     const triggerData = messages.reduce((sums, message) => {
         sums[message.trigger] = (sums[message.trigger] || 0) + 1;
