@@ -2,37 +2,18 @@ import HorizontalBarChart from "../../components/HorizontalBarChart"
 import LineChart from "../../components/LineChart"
 import PieChart from "../../components/PieChart"
 import { useEffect, useState } from "react"
-import api from "../../services/api"
-import { useDispatch } from 'react-redux';
-import { loadInfo } from '../../store/modules/appData/actions';
+import { useSelector } from "react-redux"
 
 const Dashboard = () => {
 
     const [messages, setMessages] = useState([])
-    const [triggers, setTriggers] = useState([])
-    const [channels, setChannels] = useState([])
    
-    const dispatch = useDispatch()
-
-    const getInfo = async () => {
-        try {
-            const messages = await api.get('/messages')
-            setMessages(messages.data)
-            const triggers = await api.get('/triggers')
-            setTriggers(triggers.data)
-            const channels = await api.get('/channels')
-            setChannels(channels.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const storeMessages = useSelector((state) => state.appData.messages)
 
     useEffect(() => {
-        getInfo()
-    }, [])
+        setMessages(storeMessages)
+    }, [storeMessages])
 
-    const info = { triggers, channels, messages }
-    dispatch(loadInfo(info))
 
     const triggerData = messages.reduce((sums, message) => {
         sums[message.trigger] = (sums[message.trigger] || 0) + 1;

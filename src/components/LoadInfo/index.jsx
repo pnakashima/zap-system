@@ -1,39 +1,32 @@
 import api from '../../services/api';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadInfo } from '../../store/modules/appData/actions';
 
-const LoadInfo = () => {
-    const [info, setInfo] = useState({})
+const LoadInfo = ({ children }) => {
 
     const dispatch = useDispatch()
 
     const getInfo = async () => {
         try {
+            const messages = await api.get('/messages')
             const triggers = await api.get('/triggers')
             const channels = await api.get('/channels')
-            const messages = await api.get('/messages')
-            const info = {
-                triggers: triggers.data,
-                channels: channels.data,
-                messages: messages.data
-            }
-            setInfo(info)
-            //console.log("getInfo", info)
+            const info = { triggers: triggers.data, channels: channels.data, messages: messages.data }
+            dispatch(loadInfo(info))
         } catch (error) {
-            //console.log("LoadInfo:", error)
+            console.log(error)
         }
     }
 
     useEffect(() => {
-        //console.log("LoadInfo useEffect")
         getInfo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    dispatch(loadInfo(info))
 
     return (
         <>
+            {children}
         </>
     )
 }
