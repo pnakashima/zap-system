@@ -20,6 +20,7 @@ const MessageFields = (props) => {
         setChannels(storeChannels)
     }, [storeTriggers, storeChannels])
 
+
     return (
         <>
             <form onSubmit={funcButton1}>
@@ -36,21 +37,38 @@ const MessageFields = (props) => {
                 <div className="message-filter-container">
                     <div className="message-filter-item">
                         <label htmlFor="trigger">Gatilho:</label><br />
-                        <select id="trigger" name="trigger" onChange={(e) => handleTrigger(e.target.value)} value={triggerValue}>
-                            <option value="" ></option>
+                        <select
+                            id="trigger"
+                            name="trigger"
+                            onChange={(e) => handleTrigger(e.target.value)}
+                            value={triggerValue}
+                        >
+                            <option value="" >Escolha um gatilho</option>
                             {triggers.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
                         </select>
                     </div>
                     <div className="message-filter-item">
                         <label htmlFor="channel">Canal:</label><br />
-                        <select id="channel" name="channel" onChange={(e) => handleChannel(e.target.value)} value={channelValue}>
-                            <option value=""></option>
+                        <select
+                            id="channel"
+                            name="channel"
+                            onChange={(e) => handleChannel(e.target.value)}
+                            value={channelValue}
+                        >
+                            <option value="">Escolha um canal</option>
                             {channels.map((el) => <option key={el.id} value={el.name}>{el.name}</option>)}
                         </select>
                     </div>
                     <div className="message-filter-item">
                         <label htmlFor="timer">Timer:</label><br />
-                        <input type="text" id="timer" name="timer" onChange={(e) => handleTimer(e.target.value)} value={timerValue} />
+                        <input
+                            type="text"
+                            id="timer"
+                            name="timer"
+                            onChange={(e) => handleTimer(e.target.value)}
+                            value={timerValue}
+                            placeholder="Digite o número de horas"
+                        />
                     </div>
                 </div>
 
@@ -63,6 +81,7 @@ const MessageFields = (props) => {
                             rows="10"
                             value={messageValue}
                             onChange={(e) => handleMessage(e.target.value)}
+                            placeholder="Digite a mensagem que será enviada ao cliente"
                         />
                     </div>
                 }

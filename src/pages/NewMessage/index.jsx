@@ -26,7 +26,7 @@ const NewMessage = () => {
             .typeError('Digite o número de horas do Timer (apenas números)')
             .positive('Digite o número de horas do Timer (números positivos apenas)')
             .integer('Digite o número de horas do Timer (números inteiros apenas)'),
-        message: yup.string().required('Digite a mensagem que será enviada ao usuário'),
+        message: yup.string().required('Digite a mensagem que será enviada ao cliente'),
     })
 
     const handleSubmit = async (e) => {
